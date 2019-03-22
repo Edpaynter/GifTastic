@@ -53,6 +53,20 @@ $("#add-show").on("click", function (event) {
 });
 
 
+$(document).on("click", ".gif", handleGif)
+
+function handleGif() {
+var state = $(this).attr("data-state");
+console.log(state)
+if (state === "data-still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "data-animate");
+} else {
+   $(this).attr("src", $(this).attr("data-still"));
+   $(this).attr("data-state", "data-still");
+}
+}
+
 $(document).ready(function () {
 
     renderButtons()
